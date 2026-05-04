@@ -61,6 +61,14 @@
   }
 
   /* ── Glassmorphism ───────────────────────────────────────────── */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.04), transparent);
+  }
+
   .glass-effect {
     background-color: rgba(10, 28, 64, 0.45);
     backdrop-filter: blur(12px) saturate(180%);

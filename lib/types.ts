@@ -9,4 +9,5 @@ export interface Segment {
   statusSub: string;
   ctaLabel: string;
   accentColor: string;
+  href?: string;
 }

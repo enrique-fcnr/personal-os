@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Segment } from "@/lib/types";
 
@@ -12,9 +13,13 @@ interface SegmentCardProps {
 }
 
 function SegmentCard({ segment, isActive, onSelect, onHover }: SegmentCardProps) {
+  const router = useRouter();
   return (
     <button
-      onClick={() => onSelect(segment.id)}
+      onClick={() => {
+        if (segment.href) router.push(segment.href);
+        else onSelect(segment.id);
+      }}
       onMouseEnter={() => onHover(segment.id)}
       onMouseLeave={() => onHover(null)}
       className={cn(

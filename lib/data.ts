@@ -13,6 +13,7 @@ export const SEGMENTS: Segment[] = [
     statusSub: "REMAINING",
     ctaLabel: "LAUNCH DEEP WORK",
     accentColor: "#2471E7",
+    href: "/work",
   },
   {
     id: "study",
