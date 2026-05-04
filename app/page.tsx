@@ -9,8 +9,10 @@ import ActiveSegmentDetails from "@/components/active-segment-details";
 
 export default function DashboardPage() {
   const [activeId, setActiveId] = useState<string>(DEFAULT_SEGMENT_ID);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const activeSegment = SEGMENTS.find((s) => s.id === activeId) ?? SEGMENTS[0];
+  const displayId = hoveredId ?? activeId;
+  const activeSegment = SEGMENTS.find((s) => s.id === displayId) ?? SEGMENTS[0];
 
   return (
     <main
@@ -30,13 +32,16 @@ export default function DashboardPage() {
       <div className="relative z-10 flex flex-col h-full justify-between">
         <TopNav />
         <CentralTitle />
-        <div className="flex flex-col gap-5 px-8 pb-8">
-          <SegmentGallery
-            segments={SEGMENTS}
-            activeId={activeId}
-            onSelect={setActiveId}
-          />
-          <ActiveSegmentDetails segment={activeSegment} />
+        <div className="flex justify-center px-8 pb-8">
+          <div className="flex flex-col gap-5 w-fit">
+            <SegmentGallery
+              segments={SEGMENTS}
+              activeId={activeId}
+              onSelect={setActiveId}
+              onHover={setHoveredId}
+            />
+            <ActiveSegmentDetails segment={activeSegment} />
+          </div>
         </div>
       </div>
     </main>

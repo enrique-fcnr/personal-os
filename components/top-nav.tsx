@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { LogIn } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Home",        href: "#", active: false },
-  { label: "Performance", href: "#", active: true  },
-  { label: "Wealth",      href: "#", active: false },
-  { label: "Systems",     href: "#", active: false },
+  { label: "Home",    href: "#", active: true  },
+  { label: "Monthly", href: "#", active: false },
+  { label: "Annual",  href: "#", active: false },
+  { label: "Vision",  href: "#", active: false },
 ];
 
 export default function TopNav() {
@@ -46,13 +46,13 @@ export default function TopNav() {
         ))}
       </nav>
 
-      {/* Hamburger */}
+      {/* Login */}
       <Button
         variant="ghost"
-        size="icon"
-        className="glass-effect text-white hover:text-brand-orange hover:bg-transparent rounded-lg"
+        className="glass-effect text-white hover:text-brand-orange hover:bg-transparent rounded-lg gap-2 px-4 text-xs font-inter font-medium tracking-[0.2em] uppercase"
       >
-        <Menu className="w-5 h-5" />
+        <LogIn className="w-4 h-4" />
+        Login
       </Button>
     </header>
   );
