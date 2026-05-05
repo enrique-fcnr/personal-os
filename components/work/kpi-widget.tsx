@@ -10,7 +10,7 @@ export default function KpiWidget({ label, value, color, barColor, bars }: KpiWi
   return (
     <div className="glass-card rounded-xl p-4">
       <div className="flex justify-between items-start mb-4">
-        <p className="font-['Space_Grotesk'] text-[10px] text-white/40 uppercase tracking-widest leading-tight">
+        <p className="font-inter text-[10px] text-white/40 uppercase tracking-widest leading-tight">
           {label}
         </p>
         <p className={`font-bayon text-xl leading-none ${color}`}>{value}</p>

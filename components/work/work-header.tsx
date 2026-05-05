@@ -10,7 +10,7 @@ export default function WorkHeader() {
       {/* Left */}
       <div className="flex items-center gap-6">
         <div>
-          <p className="text-[9px] text-white/30 font-['Space_Grotesk'] uppercase tracking-widest leading-none mb-0.5">
+          <p className="text-[9px] text-white/30 font-inter uppercase tracking-widest leading-none mb-0.5">
             Personal OS / Work
           </p>
           <h2 className="font-bayon text-lg text-white uppercase leading-tight tracking-wide">
@@ -33,7 +33,7 @@ export default function WorkHeader() {
             key={tab}
             href="#"
             className={cn(
-              "px-5 h-full flex items-center font-['Space_Grotesk'] text-sm transition-colors border-b-2",
+              "px-5 h-full flex items-center font-inter text-sm transition-colors border-b-2",
               tab === ACTIVE_TAB
                 ? "text-brand-blue border-brand-blue"
                 : "text-white/50 hover:text-white/80 border-transparent"
@@ -46,10 +46,10 @@ export default function WorkHeader() {
 
       {/* Right */}
       <div className="flex items-center gap-2">
-        <button className="bg-brand-blue text-white font-['Space_Grotesk'] text-xs font-bold px-5 py-1.5 rounded-sm hover:brightness-110 transition-all">
+        <button className="bg-brand-blue text-white font-inter text-xs font-bold px-5 py-1.5 rounded-sm hover:brightness-110 transition-all">
           Deploy
         </button>
-        <button className="border border-white/10 text-white/60 font-['Space_Grotesk'] text-xs font-bold px-5 py-1.5 rounded-sm hover:bg-white/5 transition-all">
+        <button className="border border-white/10 text-white/60 font-inter text-xs font-bold px-5 py-1.5 rounded-sm hover:bg-white/5 transition-all">
           Logs
         </button>
       </div>

@@ -17,13 +17,13 @@ export default function WorkSidebar() {
       <Link href="/" className="px-6 mb-10 block hover:opacity-70 transition-opacity">
         <div className="lg:hidden flex items-center justify-center">
           <div className="w-8 h-8 rounded-lg bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center">
-            <span className="text-brand-blue text-xs font-bold font-['Space_Grotesk']">P</span>
+            <span className="text-brand-blue text-xs font-bold font-inter">P</span>
           </div>
         </div>
-        <h1 className="hidden lg:block text-xl font-black tracking-tighter text-white font-['Space_Grotesk']">
+        <h1 className="hidden lg:block text-xl font-black tracking-tighter text-white font-inter">
           Personal OS
         </h1>
-        <p className="hidden lg:block text-[10px] uppercase tracking-wider text-white/40 font-['Space_Grotesk']">
+        <p className="hidden lg:block text-[10px] uppercase tracking-wider text-white/40 font-inter">
           V-4.0 Stable
         </p>
       </Link>
@@ -41,7 +41,7 @@ export default function WorkSidebar() {
             )}
           >
             <Icon className="w-5 h-5 shrink-0" />
-            <span className="hidden lg:block font-['Space_Grotesk'] uppercase tracking-wider text-[10px]">
+            <span className="hidden lg:block font-inter uppercase tracking-wider text-[10px]">
               {label}
             </span>
           </Link>
@@ -49,7 +49,7 @@ export default function WorkSidebar() {
       </nav>
 
       <div className="px-4 mb-6 mt-4">
-        <button className="w-full bg-brand-orange text-white font-['Space_Grotesk'] text-[10px] uppercase tracking-widest py-3 rounded-sm hover:brightness-110 transition-all active:scale-95">
+        <button className="w-full bg-brand-orange text-white font-inter text-[10px] uppercase tracking-widest py-3 rounded-sm hover:brightness-110 transition-all active:scale-95">
           <span className="hidden lg:inline">Launch Deep Work</span>
           <span className="lg:hidden text-base">▶</span>
         </button>
@@ -65,10 +65,10 @@ export default function WorkSidebar() {
             />
           </div>
           <div className="hidden lg:block">
-            <p className="text-[10px] font-bold text-white leading-tight font-['Space_Grotesk']">
+            <p className="text-[10px] font-bold text-white leading-tight font-inter">
               Executive Profile
             </p>
-            <p className="text-[8px] text-white/40 tracking-wider font-['Space_Grotesk']">STATUS: ONLINE</p>
+            <p className="text-[8px] text-white/40 tracking-wider font-inter">STATUS: ONLINE</p>
           </div>
         </div>
       </div>

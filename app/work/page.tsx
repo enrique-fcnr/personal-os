@@ -1,8 +1,9 @@
 import TopNav from "@/components/top-nav";
 import DeepWorkTimer from "@/components/work/deep-work-timer";
-import KpiWidget from "@/components/work/kpi-widget";
 import PriorityList from "@/components/work/priority-list";
 import ProjectPipeline from "@/components/work/project-pipeline";
+import WorkFocus from "@/components/work/work-focus";
+import WorkClock from "@/components/work/work-clock";
 
 export const metadata = { title: "Personal OS | Work" };
 
@@ -34,31 +35,9 @@ export default function WorkPage() {
                 <h2 className="font-bayon text-5xl text-white uppercase tracking-wide leading-none">
                   Terminal de Trabalho
                 </h2>
-                <p className="font-inter text-white/40 text-sm mt-2">
-                  Foco Atual:{" "}
-                  <span className="text-brand-sky">
-                    Expansão Q4 &amp; Infraestrutura de Dados
-                  </span>
-                </p>
+                <WorkFocus />
               </div>
-              <div className="hidden md:flex gap-8">
-                <div className="text-right">
-                  <p className="text-[10px] text-white/40 uppercase tracking-widest font-['Space_Grotesk']">
-                    CPU Load
-                  </p>
-                  <p className="font-bayon text-2xl text-brand-orange leading-none mt-0.5">
-                    24.8%
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-[10px] text-white/40 uppercase tracking-widest font-['Space_Grotesk']">
-                    Network
-                  </p>
-                  <p className="font-bayon text-2xl text-brand-blue leading-none mt-0.5">
-                    Stable
-                  </p>
-                </div>
-              </div>
+              <WorkClock />
             </div>
 
             {/* Bento grid */}
@@ -66,22 +45,6 @@ export default function WorkPage() {
               {/* Left column */}
               <div className="col-span-12 lg:col-span-4 flex flex-col gap-5">
                 <DeepWorkTimer />
-                <div className="grid grid-cols-2 gap-5">
-                  <KpiWidget
-                    label="ROI Anual"
-                    value="+14.2%"
-                    color="text-brand-blue"
-                    barColor="bg-brand-blue"
-                    bars={[40, 55, 48, 70, 62, 80, 72]}
-                  />
-                  <KpiWidget
-                    label="Efficiency"
-                    value="94%"
-                    color="text-[#34D399]"
-                    barColor="bg-[#34D399]"
-                    bars={[80, 85, 88, 90, 87, 94, 94]}
-                  />
-                </div>
                 <PriorityList />
               </div>
 
