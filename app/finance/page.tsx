@@ -65,7 +65,7 @@ export default function FinancePage() {
                 <RecentDividends />
               </div>
 
-              {/* Row 3: Daily Balance + Cashflow */}
+              {/* Row 3: Monthly Balance + Cashflow */}
               <div className="col-span-12 lg:col-span-3">
                 <DailyBalance />
               </div>
