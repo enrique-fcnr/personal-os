@@ -12,7 +12,7 @@ export default function TopNav() {
   return (
     <header className="w-full px-8 py-5 flex justify-between items-center">
       {/* Logo */}
-      <div className="flex items-center gap-3">
+      <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <svg
           className="w-8 h-8 text-brand-orange"
           fill="none"
@@ -26,7 +26,7 @@ export default function TopNav() {
         <span className="font-bayon text-xl tracking-[0.25em] text-white uppercase">
           Command Center
         </span>
-      </div>
+      </a>
 
       {/* Desktop nav */}
       <nav className="hidden md:flex items-center gap-10">

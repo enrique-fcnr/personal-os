@@ -79,6 +79,7 @@ export const SEGMENTS: Segment[] = [
     statusSub: "YTD RETURN",
     ctaLabel: "VIEW PORTFOLIO",
     accentColor: "#FACC15",
+    href: "/finance",
   },
 ];
 
