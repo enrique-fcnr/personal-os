@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import TopNav from "@/components/top-nav";
 import CourseProgress from "@/components/study/course-progress";
 import ReadingList from "@/components/study/reading-list";
@@ -46,7 +47,9 @@ export default function StudyPage() {
             <div className="grid grid-cols-12 gap-5">
               {/* Left: Timer (top) + Courses (bottom) */}
               <div className="col-span-12 lg:col-span-8 flex flex-col gap-5">
-                <StudyTimer />
+                <Suspense fallback={null}>
+                  <StudyTimer />
+                </Suspense>
                 <CourseProgress />
               </div>
 

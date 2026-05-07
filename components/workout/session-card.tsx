@@ -76,16 +76,16 @@ const SESSIONS: Session[] = [
 
 let nextExId = 100;
 
-type Props = { dayIndex: number; onComplete?: () => void };
+type Props = { dayIndex: number; onComplete?: () => void; autoStart?: boolean };
 
-export default function SessionCard({ dayIndex, onComplete }: Props) {
+export default function SessionCard({ dayIndex, onComplete, autoStart = false }: Props) {
   const base = SESSIONS[dayIndex] ?? SESSIONS[0];
 
   const [exercises, setExercises]   = useState<Exercise[]>(base.exercises);
   const [prevDay, setPrevDay]       = useState(dayIndex);
   const [confirmId, setConfirmId]   = useState<number | null>(null);
   const [adding, setAdding]         = useState(false);
-  const [started, setStarted]       = useState(false);
+  const [started, setStarted]       = useState(autoStart);
   const [doneIds, setDoneIds]       = useState<Set<number>>(new Set());
   const [form, setForm]             = useState({ name: "", desc: "", sets: "", reps: "", weight: "" });
 

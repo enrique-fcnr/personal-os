@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { Timer } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,8 @@ function fmt(s: number) {
 }
 
 export default function StudyTimer() {
-  const [phase, setPhase]         = useState<Phase>("idle");
+  const searchParams = useSearchParams();
+  const [phase, setPhase]         = useState<Phase>(searchParams.get("autostart") === "1" ? "focus" : "idle");
   const [remaining, setRemaining] = useState(FOCUS_SECS);
   const [sessions, setSessions]   = useState(0);
 

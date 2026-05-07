@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Timer } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -15,7 +16,8 @@ function fmt(s: number) {
 }
 
 export default function DeepWorkTimer() {
-  const [status, setStatus] = useState<Status>("idle");
+  const searchParams = useSearchParams();
+  const [status, setStatus] = useState<Status>(searchParams.get("autostart") === "1" ? "running" : "idle");
   const [remaining, setRemaining] = useState(BLOCK_SECONDS);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 

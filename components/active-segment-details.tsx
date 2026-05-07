@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight, Zap } from "lucide-react";
@@ -18,6 +19,14 @@ interface ActiveSegmentDetailsProps {
 export default function ActiveSegmentDetails({
   segment,
 }: ActiveSegmentDetailsProps) {
+  const router = useRouter();
+
+  const handleCta = () => {
+    if (!segment.href) return;
+    const autostart = segment.id === "work" || segment.id === "study" || segment.id === "workout";
+    router.push(autostart ? `${segment.href}?autostart=1` : segment.href);
+  };
+
   return (
     <div className="glass-effect rounded-2xl px-8 py-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
       {/* Left: Title + meta */}
@@ -72,6 +81,7 @@ export default function ActiveSegmentDetails({
         </div>
 
         <Button
+          onClick={handleCta}
           className="bg-brand-orange hover:bg-brand-orange/85 text-white font-inter font-semibold text-sm tracking-widest uppercase px-8 py-3 rounded-full h-auto group transition-all duration-200"
         >
           {segment.ctaLabel}

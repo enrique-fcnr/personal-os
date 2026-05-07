@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import TopNav from "@/components/top-nav";
 import WeeklySchedule from "@/components/workout/weekly-schedule";
 import SessionCard from "@/components/workout/session-card";
@@ -8,7 +10,9 @@ import WeeklyWorkoutRing from "@/components/workout/hrv-card";
 import SleepCard from "@/components/workout/sleep-card";
 import VolumeChart from "@/components/workout/volume-chart";
 
-export default function WorkoutPage() {
+function WorkoutContent() {
+  const searchParams                      = useSearchParams();
+  const autoStart                         = searchParams.get("autostart") === "1";
   const [activeDay, setActiveDay]         = useState(0);
   const [completedDays, setCompletedDays] = useState<Set<number>>(new Set());
 
@@ -66,7 +70,7 @@ export default function WorkoutPage() {
 
               {/* Row 2: Session + right column */}
               <div className="col-span-12 lg:col-span-8">
-                <SessionCard dayIndex={activeDay} onComplete={() => markDayComplete(activeDay)} />
+                <SessionCard dayIndex={activeDay} onComplete={() => markDayComplete(activeDay)} autoStart={autoStart} />
               </div>
               <div className="col-span-12 lg:col-span-4 flex flex-col gap-5">
                 <WeeklyWorkoutRing completedDays={completedDays.size} />
@@ -93,5 +97,13 @@ export default function WorkoutPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function WorkoutPage() {
+  return (
+    <Suspense fallback={null}>
+      <WorkoutContent />
+    </Suspense>
   );
 }

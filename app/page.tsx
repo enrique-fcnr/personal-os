@@ -9,10 +9,8 @@ import ActiveSegmentDetails from "@/components/active-segment-details";
 
 export default function DashboardPage() {
   const [activeId, setActiveId] = useState<string>(DEFAULT_SEGMENT_ID);
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const displayId = hoveredId ?? activeId;
-  const activeSegment = SEGMENTS.find((s) => s.id === displayId) ?? SEGMENTS[0];
+  const activeSegment = SEGMENTS.find((s) => s.id === activeId) ?? SEGMENTS[0];
 
   return (
     <main
@@ -38,7 +36,7 @@ export default function DashboardPage() {
               segments={SEGMENTS}
               activeId={activeId}
               onSelect={setActiveId}
-              onHover={setHoveredId}
+              onHover={(id) => { if (id) setActiveId(id); }}
             />
             <ActiveSegmentDetails segment={activeSegment} />
           </div>
