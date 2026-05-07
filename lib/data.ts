@@ -69,6 +69,7 @@ export const SEGMENTS: Segment[] = [
     statusSub: "HYDRATION",
     ctaLabel: "LOG MEAL",
     accentColor: "#34D399",
+    href: "/nutrition",
   },
   {
     id: "finance",
