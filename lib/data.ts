@@ -41,6 +41,7 @@ export const SEGMENTS: Segment[] = [
     statusSub: "KCAL TARGET",
     ctaLabel: "START WORKOUT",
     accentColor: "#E6701E",
+    href: "/workout",
   },
   {
     id: "relationship",
