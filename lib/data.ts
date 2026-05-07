@@ -27,6 +27,7 @@ export const SEGMENTS: Segment[] = [
     statusSub: "PROGRESS",
     ctaLabel: "ENTER STUDY MODE",
     accentColor: "#5BB3FD",
+    href: "/study",
   },
   {
     id: "workout",
